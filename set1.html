@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 38px;
+        font-weight: bold;
+    }
+
+    textarea {
+        width: 300px;
+        min-height: 80px;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        resize: none;
+        transition: 0.3s;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    textarea:focus {
+        border-color: #5a67d8;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Auto Resize Textarea</h1>
+    <textarea placeholder="Type here..."></textarea>
+</div>
+
+<script>
+    const textarea = document.querySelector("textarea");
+
+    textarea.addEventListener("input", () => {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+    });
+</script>
+
+</body>
+</html>
